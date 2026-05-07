@@ -44,5 +44,5 @@ A static HTML site for Bayou Brew Coffee, a small Houston coffee shop. No build 
 5. Open a PR. Do not merge without clicking the Vercel preview URL.
 
 ## Known gotchas
-- The "before" version of this site (the one scraped on stage) used inline styles everywhere. Some legacy inline-style remnants may still exist in `index.html`, `about.html`, `contact.html` — refactor opportunistically when you touch a page, but don't refactor everything in one PR.
+- An earlier version of this site used inline styles everywhere. Some legacy inline-style remnants may still exist in `index.html`, `about.html`, `contact.html` — refactor opportunistically when you touch a page, but don't refactor everything in one PR.
 - The contact form posts to `mailto:` — there's no backend yet. Don't pretend there's a real form handler.

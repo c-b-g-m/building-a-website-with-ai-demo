@@ -160,7 +160,7 @@ Footer:
 
 ---
 
-## 8. Pricing (the demo will add a /pricing page)
+## 8. Pricing
 
 Three tiers. Don't change names or prices.
 
@@ -170,7 +170,7 @@ Three tiers. Don't change names or prices.
 | Pour-Over | $7 | Single origin, your choice. Made one cup at a time. ~6 minutes. |
 | Reserve | $12 | Whatever microlot we just got in. Limited. We'll tell you what it is when you order. |
 
-When generating the pricing page, treat each tier as a card. Each card needs a CTA — `Order in shop` (since there's no e-commerce). Link the CTA to `/contact.html`.
+When generating a pricing page, treat each tier as a card. Each card needs a CTA — `Order in shop` (since there's no e-commerce). Link the CTA to `/contact.html`.
 
 ---
 
