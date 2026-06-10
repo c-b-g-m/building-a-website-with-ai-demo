@@ -1,61 +1,78 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Visit — Bayou Brew Coffee</title>
-  <meta name="description" content="Find us on Yale Street in the Houston Heights." />
-  <link rel="stylesheet" href="styles.css" />
+<title>Contact Us | Bayou Brew Coffee | Houston Heights</title>
+<meta name="description" content="Visit Bayou Brew Coffee at 2418 Yale Street in the Houston Heights. Open Tuesday-Sunday.">
+<meta charset="UTF-8">
+<style>
+body { font-family: Verdana, Geneva, sans-serif; background-color: #fff; margin: 0; padding: 0; color: #333; }
+.header { background-color: #4a3220; padding: 20px; text-align: center; border-bottom: 4px solid #d4a017; }
+.header h1 { color: #fff; margin: 0; font-family: 'Times New Roman', serif; font-size: 36px; }
+.header h1 span { color: #d4a017; }
+.tagline { color: #f4e4c1; font-style: italic; margin-top: 8px; }
+.nav { background-color: #2a1f15; padding: 12px; text-align: center; }
+.nav a { color: #fff; text-decoration: none; margin: 0 18px; font-size: 14px; text-transform: uppercase; letter-spacing: 2px; }
+.nav a:hover { color: #d4a017; text-decoration: underline; }
+.section { padding: 50px 20px; max-width: 880px; margin: 0 auto; }
+.section h2 { color: #4a3220; font-size: 32px; text-align: center; font-family: 'Times New Roman', serif; }
+.info-box { background-color: #f4e4c1; padding: 30px; margin: 30px 0; border: 2px solid #d4a017; }
+.info-box p { margin: 8px 0; line-height: 1.6; }
+.info-box strong { color: #4a3220; }
+form { max-width: 560px; margin: 30px auto; }
+form label { display: block; font-weight: bold; margin-top: 16px; color: #4a3220; }
+form input, form textarea { width: 100%; padding: 10px; margin-top: 6px; border: 1px solid #ccc; font-family: Verdana, sans-serif; box-sizing: border-box; }
+form textarea { min-height: 120px; }
+.btn { background-color: #d4a017; color: #fff !important; padding: 14px 28px; text-decoration: none !important; display: inline-block; margin-top: 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: bold; border: none; cursor: pointer; font-size: 14px; }
+.footer { background-color: #2a1f15; color: #f4e4c1; padding: 30px 20px; text-align: center; font-size: 13px; margin-top: 40px; }
+.footer a { color: #d4a017; }
+</style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="container">
-    <a class="brand" href="/">Bayou<span class="leaf"></span>Brew</a>
-    <nav class="nav" aria-label="Primary">
-      <a href="index.html#menu">Menu</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Visit</a>
-    </nav>
+<div class="header">
+  <h1>Bayou Brew <span>Coffee</span></h1>
+  <div class="tagline">Premium Artisanal Coffee in the Heights since 2018</div>
+</div>
+
+<div class="nav">
+  <a href="index.html">Home</a>
+  <a href="index.html#menu">Menu</a>
+  <a href="about.html">About Us</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="section">
+  <h2>Contact Us</h2>
+  <p style="text-align:center;font-style:italic;color:#777;">We'd love to hear from you!</p>
+
+  <div class="info-box">
+    <p><strong>Address:</strong> 2418 Yale Street, Houston, TX 77008</p>
+    <p><strong>Hours:</strong> Tuesday - Sunday, 6:00 AM - 2:00 PM</p>
+    <p><strong>Closed:</strong> Mondays</p>
+    <p><strong>Phone:</strong> (713) 555-0184</p>
+    <p><strong>Instagram:</strong> <a href="https://instagram.com/bayoubrewhtx">@bayoubrewhtx</a></p>
   </div>
-</header>
 
-<section>
-  <div class="container">
-    <h1>Visit us</h1>
-    <p class="lead">2418 Yale Street, Houston, TX 77008. Park out front. Bring your dog.</p>
+  <h2 style="font-size:24px;">Send Us a Message</h2>
+  <form action="mailto:hello@bayoubrew.coffee" method="post" enctype="text/plain">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
 
-    <h2>Hours</h2>
-    <p>Tuesday–Sunday, 6 a.m. to 2 p.m.<br />Closed Mondays.</p>
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" required>
 
-    <h2>Get in touch</h2>
-    <p>For private events, wholesale, or press, fill in below. Otherwise, just come in.</p>
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" required></textarea>
 
-    <form action="mailto:hello@bayoubrew.coffee" method="post" enctype="text/plain" style="max-width:560px;margin-top:24px;">
-      <div class="form-row">
-        <label for="name">Your name</label>
-        <input type="text" id="name" name="name" required />
-      </div>
-      <div class="form-row">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required />
-      </div>
-      <div class="form-row">
-        <label for="message">What's up?</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit" class="btn btn-primary">Send</button>
-    </form>
-  </div>
-</section>
+    <p style="text-align:center;"><button type="submit" class="btn">Submit Message</button></p>
+  </form>
+</div>
 
-<footer class="site-footer">
-  <div class="container">
-    <span>2418 Yale St, Houston, TX 77008</span>
-    <span>Tue–Sun 6a–2p · Closed Mon</span>
-    <span>(713) 555-0184 · <a href="https://instagram.com/bayoubrewhtx">@bayoubrewhtx</a></span>
-  </div>
-</footer>
+<div class="footer">
+  <p>&copy; 2018-2024 Bayou Brew Coffee, LLC. All Rights Reserved.</p>
+  <p>2418 Yale St, Houston, TX 77008 | Tue-Sun 6am-2pm | Closed Mondays</p>
+  <p>Phone: (713) 555-0184 | Follow us on <a href="https://instagram.com/bayoubrewhtx">Instagram</a>!</p>
+</div>
 
 </body>
 </html>
