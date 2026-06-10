@@ -1,0 +1,129 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Tier names and prices are fixed by brand-kit §8 — do not change.
+const tiers = [
+  {
+    name: 'Drip',
+    price: '$4',
+    what: 'House blend. 16 oz. Refills are $1.',
+    accent: false,
+  },
+  {
+    name: 'Pour-Over',
+    price: '$7',
+    what: 'Single origin, your choice. Made one cup at a time. About 6 minutes.',
+    accent: false,
+  },
+  {
+    name: 'Reserve',
+    price: '$12',
+    what: "Whatever microlot we just got in. Limited. We'll tell you what it is when you order.",
+    accent: true,
+  },
+];
+---
+
+<Layout
+  title="Pricing — Bayou Brew Coffee"
+  description="Three pours, three prices. Drip $4, Pour-Over $7, Reserve $12. Order at the bar in the Houston Heights."
+>
+  <section class="section">
+    <div class="container stack">
+      <header class="stack pricing__head">
+        <p class="tagline">Slow coffee. Houston pace.</p>
+        <h1>Three pours</h1>
+        <p class="lede">
+          No sizes to puzzle over, no secret menu. Pick one, order at the bar.
+        </p>
+      </header>
+
+      <ul class="tiers">
+        {tiers.map((tier) => (
+          <li class="tier">
+            <div class="tier__top">
+              <h3>{tier.name}</h3>
+              <span class={tier.accent ? 'tier__price tier__price--accent' : 'tier__price'}>
+                {tier.price}
+              </span>
+            </div>
+            <p>{tier.what}</p>
+            <a class="btn btn--primary tier__cta" href="/contact">Order in shop</a>
+          </li>
+        ))}
+      </ul>
+
+      <p class="caption">
+        Prices are for here or to go. There's no online ordering — come by the
+        shop on Yale Street.
+      </p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .pricing__head {
+    max-width: 640px;
+  }
+
+  .pricing__head h1 {
+    margin-bottom: 0;
+  }
+
+  .lede {
+    font-size: 20px;
+  }
+
+  .tiers {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 720px) {
+    .tiers {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .tier {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper-deep);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 32px;
+  }
+
+  .tier__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .tier__price {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 28px;
+    color: var(--bayou);
+  }
+
+  /* Copper is the single accent on this page (brand-kit §2). */
+  .tier__price--accent {
+    color: var(--copper);
+  }
+
+  .tier p {
+    flex: 1;
+  }
+
+  .tier__cta {
+    margin-top: 24px;
+    align-self: flex-start;
+  }
+</style>

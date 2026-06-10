@@ -1,0 +1,201 @@
+/* Bayou Brew Coffee — global styles.
+   Every value here traces to brand-kit.md. Do not introduce new tokens. */
+
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Backgrounds */
+  --paper:        #F8F2E8;   /* warm cream — primary background */
+  --paper-deep:   #EDE3D2;   /* slightly darker cream — alt sections */
+  --ink:          #1F1A14;   /* near-black, warm — body copy */
+
+  /* Accent */
+  --bayou:        #2F5D50;   /* deep moss green — primary brand color */
+  --bayou-soft:   #4A8470;   /* lighter moss — hover, secondary */
+  --copper:       #B8693D;   /* warm copper — accent only, sparingly */
+
+  /* Utility */
+  --border:       rgba(31, 26, 20, 0.12);
+  --muted:        rgba(31, 26, 20, 0.6);
+
+  /* Type */
+  --font-display: 'Caudex', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  /* Layout */
+  --container:    1140px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Typography scale (brand-kit §3) ---- */
+h1, h2 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.15;
+}
+
+h2 {
+  font-weight: 400;
+  font-style: italic;
+  font-size: 36px;
+  line-height: 1.2;
+}
+
+h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--ink);
+  margin: 0;
+}
+
+p {
+  margin: 0 0 16px;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.caption {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* ---- Links (brand-kit §4) ---- */
+a {
+  color: var(--bayou);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  color: var(--bayou-soft);
+}
+
+/* ---- Layout primitives (brand-kit §4) ---- */
+.container {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 48px;
+  }
+}
+
+.section {
+  padding-block: 64px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: 96px;
+  }
+}
+
+.section--alt {
+  background: var(--paper-deep);
+}
+
+.stack > * + * {
+  margin-top: 32px;
+}
+
+/* ---- Buttons (brand-kit §4) ---- */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  padding: 12px 24px;
+  border-radius: 2px;
+  text-decoration: none;
+  min-height: 44px;          /* accessibility floor (§9) */
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn--primary {
+  background: var(--bayou);
+  color: var(--paper);
+  border: 1px solid var(--bayou);
+}
+
+.btn--primary:hover {
+  background: var(--bayou-soft);
+  border-color: var(--bayou-soft);
+  color: var(--paper);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--bayou);
+  border: 1px solid var(--bayou);
+}
+
+.btn--secondary:hover {
+  background: var(--bayou);
+  color: var(--paper);
+}
+
+/* ---- Focus states (brand-kit §9, non-negotiable) ---- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid var(--bayou);
+  outline-offset: 2px;
+}
+
+/* ---- Utility ---- */
+.tagline {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--bayou);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
