@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const menu = [
+  {
+    name: 'Drip',
+    price: '$4',
+    note: 'House blend. 16 oz. Refills are $1.',
+  },
+  {
+    name: 'Pour-Over',
+    price: '$7',
+    note: 'Single origin, your choice. One cup at a time. About 6 minutes.',
+  },
+  {
+    name: 'Reserve',
+    price: '$12',
+    note: "Whatever microlot we just got in. Limited. We'll tell you what it is when you order.",
+  },
+];
+---
+
+<Layout
+  title="Bayou Brew Coffee — the Heights, Houston"
+  description="A coffee shop on Yale Street in the Houston Heights. Slow coffee, Houston pace. Open Tue–Sun, 6a–2p."
+>
+  <section class="section hero">
+    <div class="container hero__inner">
+      <p class="tagline">Slow coffee. Houston pace.</p>
+      <h1>We pour coffee. The good kind. Come by.</h1>
+      <p class="hero__lede">
+        We're on Yale Street in the Heights, between the post office and the
+        cleaners. Park out front. Bring your dog.
+      </p>
+      <p class="hero__actions">
+        <a class="btn btn--primary" href="/contact">Visit us</a>
+        <a class="btn btn--secondary" href="#menu">See the menu</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="menu">
+    <div class="container stack">
+      <div class="menu__head">
+        <h2>The menu</h2>
+        <p class="caption">Three ways to drink it. That's the whole list.</p>
+      </div>
+
+      <ul class="menu">
+        {menu.map((item) => (
+          <li class="menu-card">
+            <div class="menu-card__top">
+              <h3>{item.name}</h3>
+              <span class="menu-card__price">{item.price}</span>
+            </div>
+            <p>{item.note}</p>
+          </li>
+        ))}
+      </ul>
+
+      <p class="caption">
+        No app, no rewards card. Order at the bar. <a href="/pricing">More on the three pours.</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-col">
+      <div class="stack">
+        <h2>Why we keep it small</h2>
+        <p>
+          We do a few things and try to do them right. Ethiopian Yirgacheffe
+          one week, a washed Colombian the next. We tell you what's in the
+          hopper and pour it the way it wants to be poured.
+        </p>
+        <p>
+          It's the kind of pour-over you want at 7 a.m., when it's already 84°
+          and the day hasn't started yet.
+        </p>
+      </div>
+      <div class="hours-card">
+        <h3>When we're open</h3>
+        <p>Tuesday–Sunday, 6 a.m. to 2 p.m.</p>
+        <p>Closed Mondays.</p>
+        <p class="caption">2418 Yale St, Houston, TX 77008</p>
+        <p><a class="btn btn--secondary" href="/contact">Get directions</a></p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero__inner {
+    max-width: 760px;
+  }
+
+  .hero .tagline {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .hero h1 {
+    margin-bottom: 24px;
+  }
+
+  .hero__lede {
+    font-size: 20px;
+    max-width: 560px;
+  }
+
+  .hero__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+  }
+
+  .menu__head h2 {
+    margin-bottom: 8px;
+  }
+
+  .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 720px) {
+    .menu {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .menu-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 24px;
+  }
+
+  .menu-card__top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+  }
+
+  .menu-card__price {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--bayou);
+  }
+
+  .two-col {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  @media (min-width: 820px) {
+    .two-col {
+      grid-template-columns: 1.4fr 1fr;
+      gap: 48px;
+    }
+  }
+
+  .hours-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 32px;
+  }
+
+  .hours-card h3 {
+    margin-bottom: 16px;
+  }
+
+  .hours-card p {
+    margin-bottom: 8px;
+  }
+
+  .hours-card .btn {
+    margin-top: 16px;
+  }
+</style>

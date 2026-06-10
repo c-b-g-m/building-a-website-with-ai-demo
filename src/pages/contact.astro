@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Visit — Bayou Brew Coffee"
+  description="Find Bayou Brew Coffee at 2418 Yale St in the Houston Heights. Open Tue–Sun, 6a–2p. Closed Mondays."
+>
+  <section class="section">
+    <div class="container stack">
+      <header class="stack visit__head">
+        <p class="tagline">Slow coffee. Houston pace.</p>
+        <h1>Come by</h1>
+        <p class="lede">
+          We're on Yale Street, between the post office and the cleaners. Park
+          out front. Bring your dog.
+        </p>
+      </header>
+
+      <div class="visit__grid">
+        <div class="info-card stack">
+          <div>
+            <h3>Where</h3>
+            <p>2418 Yale St<br />Houston, TX 77008</p>
+            <p>
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=2418+Yale+St+Houston+TX+77008"
+              >
+                Open in Maps
+              </a>
+            </p>
+          </div>
+          <div>
+            <h3>When</h3>
+            <p>Tue–Sun · 6 a.m.–2 p.m.<br />Closed Mondays</p>
+          </div>
+          <div>
+            <h3>Say hi</h3>
+            <p>(713) 555-0184</p>
+            <p><a href="https://instagram.com/bayoubrewhtx" rel="me">@bayoubrewhtx</a></p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <h2>Send a note</h2>
+          <p class="caption">
+            This opens your email app — there's no form robot on the other end,
+            just us.
+          </p>
+          <form action="mailto:hello@bayoubrew.coffee" method="post" enctype="text/plain" class="contact-form">
+            <div class="field">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+            <div class="field">
+              <label for="email">Your email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+            <div class="field">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .visit__head {
+    max-width: 640px;
+  }
+
+  .visit__head h1 {
+    margin-bottom: 0;
+  }
+
+  .lede {
+    font-size: 20px;
+  }
+
+  .visit__grid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  @media (min-width: 820px) {
+    .visit__grid {
+      grid-template-columns: 1fr 1.2fr;
+      gap: 48px;
+    }
+  }
+
+  .info-card {
+    background: var(--paper-deep);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 32px;
+  }
+
+  .info-card h3 {
+    margin-bottom: 8px;
+  }
+
+  .form-card h2 {
+    margin-bottom: 12px;
+  }
+
+  .contact-form {
+    margin-top: 24px;
+    display: grid;
+    gap: 20px;
+  }
+
+  .field {
+    display: grid;
+    gap: 8px;
+  }
+
+  label {
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 18px;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 12px 14px;
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .contact-form .btn {
+    justify-self: start;
+  }
+</style>

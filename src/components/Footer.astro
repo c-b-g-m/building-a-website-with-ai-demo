@@ -1,0 +1,41 @@
+---
+// Site footer. Address, hours, phone, and social are fixed by brand-kit §6.
+const year = 2026;
+---
+
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <p class="site-footer__name">Bayou Brew Coffee</p>
+    <p>2418 Yale St, Houston, TX 77008</p>
+    <p>Tue–Sun 6a–2p · Closed Mon</p>
+    <p>(713) 555-0184</p>
+    <p>
+      <a href="https://instagram.com/bayoubrewhtx" rel="me">@bayoubrewhtx</a>
+    </p>
+    <p class="caption site-footer__legal">© {year} Bayou Brew Coffee, LLC</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--paper-deep);
+    border-top: 1px solid var(--border);
+    padding-block: 48px;
+  }
+
+  .site-footer__inner > * {
+    margin-block: 4px;
+  }
+
+  .site-footer__name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--bayou);
+    margin-bottom: 12px;
+  }
+
+  .site-footer__legal {
+    margin-top: 16px;
+  }
+</style>
